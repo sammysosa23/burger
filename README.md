@@ -1,4 +1,4 @@
-# burger
+# Burger
 
 Welcome to _burger app_!
 
@@ -6,7 +6,7 @@ A burger logger web application that uses **MySQL, Node, Express, Handlebarss,**
 
 - - -
 
-###How It Works 
+### How It Works 
 
 * Burger is a restaurant app that lets users input the names of burgers they would like to eat. 
 * Whenever a user submits a burger's name, the app will display the burger on the left side of the page; waiting to be consumed. 
