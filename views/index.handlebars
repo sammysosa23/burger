@@ -1,0 +1,16 @@
+<h1 class"title">Burger</h1>
+
+<div class="container">
+  <h2>NOM NOM!</h2>
+  <h2>Burger to eat!</h2>
+  <ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+      {{burgerName}}
+      <button data-id="{{id}}" data-devoured="true" class="changeState">Eat</button>
+    </li>
+    {{/unless}}
+    {{/each}}
+  </ul>
+</div>
