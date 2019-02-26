@@ -1,17 +1,18 @@
-var connection = require("..config/connection.js");
+var connection = require("../config/connection.js");
 
 var orm = {
   selectAll: function (table, cb) {
-    var queryString = "SELECT * FROM " + table + 
-
+    var queryString = "SELECT * FROM " + table +
+      connection.query(queryString, function (err, res) {
+        if (err) {
+          throw err;
+        }
+        cb(res);
+      });
   },
-  insertOne: function (table, colName, ColValue, cb) {
+  insertOne: function (table, colName, ColValue, cb) { },
 
-  },
-
-  updateOne: function (table, colName, colValue, idCol, idValue, cb) {
-
-  },
+  updateOne: function (table, colName, colValue, idCol, idValue, cb) { },
 
   deleteOne: function (table, idCol, idValue, cb) {
     var query = "DELETE FROM ?? WHERE ?? = ?;"

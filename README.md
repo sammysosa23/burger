@@ -14,5 +14,7 @@ A burger logger web application that uses **MySQL, Node, Express, Handlebarss,**
 * Burgers on the right side of the page have a delete button to remove it from view. 
 * The app stores every burger in a database whether eaten or not. 
 
+- - -
+
 ### Technologies Used
 **HTML**, **CSS**, **Javascript**, **jQuery**, **MySQL**, **Node.js**, **Express**, **Handlebars**,  **MVC**, and **ORM**.
