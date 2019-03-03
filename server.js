@@ -11,6 +11,15 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+// ==================== DELETE =================== //
+
+// var methodOverride = require("method-override");
+// app.use(methodOverride("_method"));
+
+// ==================== DELETE =================== //
+
+
 // DEPENDENCIES - HANDLEBARS
 var exphbs = require("express-handlebars");
 

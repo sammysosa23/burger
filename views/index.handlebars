@@ -1,16 +1,105 @@
-<h1 class"title">Burger</h1>
+{{!-- <div class="container">
+  <div class="row">
+    <div class="col-4 col-md-4 col-sm-12 col-xs-12">
+      <h3 class="heading">| EAT ME |</h3>
+      {{#each burgers}}
+      {{#unless this.devoured}}
+      <form action="/{{this.id}}?_method=PUT" method="POST" class="eat-form form-group">
+        {{this.burger_name}}
+        <input type="hidden" name="eat" value="true">
+        <input type="image" class="eat-icon" src="../assets/img/utensils.png" alt="eat icon">
+      </form>
+      {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+</div>
 
 <div class="container">
-  <h2>NOM NOM!</h2>
-  <h2>Burger to eat!</h2>
-  <ul>
+  <div class="row">
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <h3 class="heading">| EATEN |</h3>
+      <div class="list-group">
+        {{#each burger}}
+        {{#if this.devoured}}
+        <form action="/{{this.id}}?_method=DELETE" method="POST" class="delete-form form-group">
+          {{this.burger_name}}
+          <input type="image" class="trash-icon" src="../assets/img/trashCan.png" alt="trash icon">
+        </form>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <img src="../assets/img/burger.png" alt="burger" class="img-responsive">
+      <h3 class="heading">add burgers</h3>
+      <form method="POST" action="/" class="add-burger-form">
+        <div class="form-group">
+          <input type="text" id="newBurger" name="name" placeholder="burger name">
+          <button id="submitButton" class="btn btn-outline-secondary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> --}}
+
+
+
+<div class="row">
+
+  {{!-- <div class="col-md-4 col-sm-12 col-xs-12">
+    <h3 class="heading">4 U 2 EAT</h3>
     {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-      {{burgerName}}
-      <button data-id="{{id}}" data-devoured="true" class="changeState">Eat</button>
-    </li>
+    {{#unless this.devoured}}
+    <form class="eat-form form-group" action="/{{this.id}}?_method=PUT" method="POST">
+      {{this.burger_name}}
+      <input type="hidden" name="eat" value="true">
+      <input type="image" class="eat-icon" src="assets/img/utensils.png" alt="eat icon" />
+    </form>
     {{/unless}}
     {{/each}}
-  </ul>
+  </div> --}}
+
+  <div class="col-md-4 col-sm-12 col-xs-12">
+    <h3 class="heading">| EAT |</h3>
+    {{#each burgers}}
+    {{#unless this.devoured}}
+    <form class="eat-form form-group" action="/{{this.id}}" method="POST">
+      {{this.burger_name}}
+      <input type="hidden" name="eat" value="true">
+      <input type="image" class="eat-icon" src="../assets/img/utensils.png" alt="eat icon" />
+    </form>
+    {{/unless}}
+    {{/each}}
+  </div>
+
+  <div class="col-md-4 col-sm-12 col-xs-12">
+    <img src="/assets/img/burger.png" class="img-responsive" alt="burger">
+    <h3 class="heading">| ADD BURGER |</h3>
+    <form class="add-burger-form" action="/" method="POST">
+      <div class="form-group">
+        <input type="text" id="newBurger" name="name" style="text-center" placeholder="BURGER NAME">
+        <button type="submit" class="btn btn-outline-secondary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-4 col-sm-12 col-xs-12">
+    <h3 class="heading">| EATEN |</h3>
+    <div class="list-group">
+      {{#each burgers}}
+      {{#if this.devoured}}
+      <form class="delete-form form-group" action="/{{this.id}}?_method=DELETE" method="POST">
+        {{this.burger_name}}
+        <input type="image" class="trash-icon" src="../assets/img/trashCan.png" alt="trash icon" />
+      </form>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
 </div>
