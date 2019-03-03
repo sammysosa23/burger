@@ -3,21 +3,14 @@ var express = require("express");
 // EXPRESS CONFIG AND SETUP
 var app = express();
 var PORT = process.env.PORT || 8282;
+var path = require("path");
 
 // STATIC CONTENT FOR APP FROM THE PUBLIC DIR
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 // SET UP THE EXPRESS APP TO HANDLE DATA PARSING  
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-
-// ==================== DELETE =================== //
-
-// var methodOverride = require("method-override");
-// app.use(methodOverride("_method"));
-
-// ==================== DELETE =================== //
 
 
 // DEPENDENCIES - HANDLEBARS
