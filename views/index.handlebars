@@ -4,7 +4,7 @@
     <h3 class="heading">| EAT |</h3>
     {{#each burgers}}
     {{#unless this.devoured}}
-    <form class="eat-form form-group" action="/{{this.id}}" method="POST">
+    <form class="eat-form form-group" action="/{{ this.id }}?_method=PUT" method="POST">
       {{this.burger_name}}
       <input type="hidden" name="eat" value="true">
       <input type="image" class="eat-icon" src="../assets/img/utensils.png" alt="eat icon" />

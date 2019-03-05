@@ -1,5 +1,5 @@
 // IMPORTING MYSQL CONNECTION
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 // OBJECT FOR ALL SQL STATEMENT FUNCTIONS
 var orm = {
@@ -10,30 +10,27 @@ var orm = {
       cb(result);
     });
   },
-
   insertOne: function (table, colName, colValue, cb) {
     var query = "INSERT INTO ?? (??) VALUES (?);";
     connection.query(query, [table, colName, colValue], function (err, result) {
       if (err) throw err;
-      console.log("Success on inserting burger: " + result);
+      console.log("Successfully inserted: " + result);
       cb(result);
     });
   },
-
   updateOne: function (table, colName, colValue, idCol, idValue, cb) {
-    var query = "UPDATE ?? SET ?? = ?;";
+    var query = "UPDATE ?? SET ?? = ? WHERE ?? = ?;";
     connection.query(query, [table, colName, colValue, idCol, idValue], function (err, result) {
       if (err) throw err;
-      console.log("Success update: " + result);
+      console.log("Successfully updated: " + result);
       cb(result);
     });
   },
-
-  deleteOne: function (table, idCol, idVal, cb) {
-    var query = "DELETE FROM ?? WHERE ?? = ?;";
-    connection.query(query, [table, idName, idValue], function (err, result) {
+  deleteOne: function (table, idCol, idValue, cb) {
+    var query = "DELETE FROM ?? WHERE ?? = ?;"
+    connection.query(query, [table, idCol, idValue], function (err, result) {
       if (err) throw err;
-      console.log("Success on deleting: " + result);
+      console.log("Successfully deleted: " + result);
       cb(result);
     })
   }
@@ -41,3 +38,4 @@ var orm = {
 
 // EXPORT THE ORM TO THE MODEL/BURGER.JS
 module.exports = orm
+

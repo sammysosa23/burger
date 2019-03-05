@@ -1,5 +1,11 @@
 // DEPENDENCIES - EXPRESS
 var express = require("express");
+// DEPENDENCIES - METHOD OVERRIDE
+var methodOverride = require("method-override");
+// DEPENDENCIES - HANDLEBARS
+var exphbs = require("express-handlebars");
+
+
 // EXPRESS CONFIG AND SETUP
 var app = express();
 var PORT = process.env.PORT || 8282;
@@ -12,9 +18,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-// DEPENDENCIES - HANDLEBARS
-var exphbs = require("express-handlebars");
+// SETS UP METHOD OVERRIDE
+app.use(methodOverride("_method"));
 
 // SETS UP HANDLEBARS AS DEFAULT TEMPLATING ENGINE - MIDDLEWARE
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

@@ -23,7 +23,7 @@ router.post("/", function (req, res) {
 // ROUTE - UPDATE
 router.put("/:id", function (req, res) {
   console.log(req.body);
-  burger.updateOne(req.body.name, function () {
+  burger.updateOne(req.params.id, function () {
     res.redirect("/");
   });
 });
@@ -37,7 +37,3 @@ router.delete("/:id", function (req, res) {
 
 // EXPORT ROUTES TO SERVER.JS
 module.exports = router;
-
-
-
-
