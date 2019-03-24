@@ -2,7 +2,6 @@
 var mysql = require("mysql");
 var connection;
 
-
 // USING JAWSDB TO CONFIGURE CONNECTION
 if (process.env.JAWSDB_URL) {
   console.log("I'm utilizing JAWSDB");
@@ -17,15 +16,6 @@ if (process.env.JAWSDB_URL) {
     password: 'password',
     database: 'burgers_db'
   });
-
-  // // MYSQL DB CONNECTION INFO
-  // var connection = mysql.createConnection({
-  //   host: 'localhost',
-  //   port: 3306,
-  //   user: 'root',
-  //   password: 'password',
-  //   database: 'burgers_db'
-  // });
 
   // INIT MYSQL CONNECTION
   connection.connect(function (err) {
