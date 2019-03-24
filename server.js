@@ -12,8 +12,8 @@ var PORT = process.env.PORT || 8282;
 var path = require("path");
 
 // STATIC CONTENT FOR APP FROM THE PUBLIC DIR
-// app.use(express.static(path.join(__dirname, "public")));
-app.use("/public", express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
+// app.use("/public", express.static(path.join(__dirname, "public")));
 
 // SET UP THE EXPRESS APP TO HANDLE DATA PARSING  
 app.use(express.urlencoded({ extended: true }));
