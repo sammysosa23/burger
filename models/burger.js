@@ -18,6 +18,7 @@ var burger = {
       cb(res);
     });
   },
+
   // INSERTS ONE RECORD INTO THE BURGERS TABLE
   updateOne: function (idNum, cb) {
     orm.updateOne("burgers", "devoured", "1", "id", idNum, function (res) {
