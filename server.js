@@ -8,7 +8,7 @@ var exphbs = require("express-handlebars");
 
 // EXPRESS CONFIG AND SETUP
 var app = express();
-var PORT = process.env.PORT || 8282;
+var PORT = process.env.PORT || 8800;
 var path = require("path");
 
 // STATIC CONTENT FOR APP FROM THE PUBLIC DIR

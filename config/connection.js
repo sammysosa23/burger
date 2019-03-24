@@ -1,7 +1,7 @@
 // MYSQL CONNECTION
 var mysql = require("mysql");
 
-// var connection;
+var connection;
 
 // // USING JAWSDB TO CONFIGURE CONNECTION
 // if (process.env.JAWSDB_URL) {
@@ -38,27 +38,6 @@ connection.connect(function (err) {
 // EXPORT CONNECTION FOR OUR ORM
 module.exports = connection;
 
-// JUST IN CASE IT NEEDS TO HANDLE A DISCONNECT
-
-// function handleDisconnect() {
-//   connection = mysql.createConnection(connection);
-
-//   connection.connect(function (err) {
-//     if (err) {
-//       console.log("error when connecting to db: ", err);
-//       setTimeout(handleDisconnect, 2000);
-//     }
-//   });
-//   connection.on('error', function (err) {
-//     console.log("db error", err);
-//     if (err.code === "PROTOCOL_CONNECTION_LOST") {
-//       handleDisconnect();
-//     } else {
-//       throw err;
-//     }
-//   });
-// }
-// handleDisconnect();
 
 
 

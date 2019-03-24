@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="../assets/css/burger_style.css" type="text/css" />
   <title>| Burger |</title>
 
-  {{!-- JQUERY STYLESHEET --}}
-  {{!-- <script src="/assets/javascript/burgers.js"></script> --}}
 </head>
 
 <body>
   {{!-- HEADER --}}
   <header class="jumbotron">
-    <h1 id="title">* burger *</h1>
+    <h2>welcome</h2>
+    <h6>to</h6>
+    <h1 id="title">* good burger *</h1>
   </header>
 
   {{!-- BODY --}}
@@ -31,8 +31,20 @@
 </body>
 {{!-- JQUERY CDN --}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type"text/javascript"> $(".eat-icon").hover(function () { $(this).css({ opacity: 0.5 }); }, function () {
-    $(this).css({ opacity: 1 });
-  }), $(".trash-icon").hover(function () { $(this).css({ opacity: 0.5 }); }, function () {
-    $(this).css({ opacity: 1 });
-  }); </script> </html>
+<script type="text/javascript">
+  $(".eat-icon").hover(function () {
+    $(this).css({ opacity: 0.5 });
+  },
+    function () {
+      $(this).css({ opacity: 1 });
+    });
+
+  $(".trash-icon").hover(function () {
+    $(this).css({ opacity: 0.5 });
+  },
+    function () {
+      $(this).css({ opacity: 1 });
+    }); 
+</script>
+
+</html>
