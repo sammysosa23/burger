@@ -1,7 +1,7 @@
 // MYSQL CONNECTION
 var mysql = require("mysql");
 
-// var connection;
+var connection;
 
 // // USING JAWSDB TO CONFIGURE CONNECTION
 // if (process.env.JAWSDB_URL) {
